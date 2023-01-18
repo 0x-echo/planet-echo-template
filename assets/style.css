@@ -269,7 +269,7 @@ a:hover {
 .echo-post__content img {
   display: block;
   max-width: 100%;
-  margin: 16px auto;
+  margin: 24px auto;
 }
 
 .echo-post__content ul,
@@ -336,6 +336,17 @@ a:hover {
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+.echo-post__video-container,
+.echo-post__audio-container {
+  margin: 24px 0;
+}
+
+.echo-post__video,
+.echo-post__audio {
+  display: block;
+  width: 100%;
 }
 
 @media (prefers-color-scheme: dark) {

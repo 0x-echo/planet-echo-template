@@ -27,14 +27,6 @@
 <link rel="stylesheet" href="../assets/highlight/github-dark.css">
 <script src="../assets/highlight/highlight.min.js"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    if (!window.PLANET.visitedFromPlanetClient) {
-      if(document.getElementById('audio-container')){
-        document.querySelector('.audio-container').style.display = 'block';
-      }
-    }
-  });
-  
   document.addEventListener('DOMContentLoaded', (event) => {
     document.querySelectorAll('pre code').forEach((el) => {
       hljs.highlightElement(el);
@@ -79,16 +71,25 @@
   <div 
     class="echo-post__content">
     {% if article.hasVideo %}
-    <div class="video-container">
-      <video class="video" controls playsinline>
-        <source src="{{ article.videoFilename }}">
+    <div 
+      class="echo-post__video-container">
+      <video 
+        class="echo-post__video" 
+        controls 
+        playsinline>
+        <source 
+          src="{{ article.videoFilename }}">
       </video>
     </div>
     {% endif %}
     {% if article.hasAudio %}
-    <div class="audio-container" id="audio-container" style="display: none;">
-      <audio class="audio" controls>
-        <source src="{{ article.audioFilename }}">
+    <div
+      class="echo-post__audio-container">
+      <audio 
+        class="echo-post__audio" 
+        controls>
+        <source 
+          src="{{ article.audioFilename }}">
       </audio>
     </div>
     {% endif %}
