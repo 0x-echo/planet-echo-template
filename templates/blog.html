@@ -45,20 +45,20 @@
         class="echo-post__breadcrumb-link"
         href="../"
         title="{{ planet.name|escapejs }}">
-        <- {{ planet.name|escapejs }} 
+        <- {{ planet.name | escapejs }} 
       </a>
     </div>
 
     <h1
       class="echo-post__title">
-      {{ article.title|escape }}
+      {{ article.title | escape }}
     </h1>
 
     <div
       class="echo-post__meta">
       <span
         class="echo-post__date">
-        {{ article.created|ymd }}
+        {{ article.created | ymd }}
       </span>
       
       <span
@@ -82,6 +82,7 @@
       </video>
     </div>
     {% endif %}
+    
     {% if article.hasAudio %}
     <div
       class="echo-post__audio-container">
