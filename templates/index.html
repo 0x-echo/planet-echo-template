@@ -21,91 +21,181 @@
 <!-- End Open Graph Tags -->
 {% endblock %}
 {% block main %}
-<div class="echo-home__header">
-  {% if has_avatar %}
-  <img 
-    src="{{ assets_prefix }}avatar.png" 
-    width="72" 
-    height="72" 
-    class="echo-home__avatar">
-  {% endif %}
-  
-  <div 
-    class="echo-home__site-info">
-    <h1
-      class="echo-home__site-title">
-      {{ page_title|escape }}
-    </h1>
-    
-    {% if page_description_html.count > 0 %}
-    <div 
-      class="echo-home__site-about">
-      {{ page_description_html }}
-    </div>
-    {% endif %}
-  </div>
-</div>
-<div class="nav-container"><div class="nav">
-  <a href="./" class="nav-current">Home</a>
-  <!-- TODO: Implement Article.kind and Archive
-  <a href="./" class="nav-item">About</a>
-  <a href="./" class="nav-item">Archive</a>
-  <a href="./" class="nav-item">Contact</a>
-  -->
-  <a href="{{ assets_prefix }}rss.xml" target="_blank"><img src="{{ assets_prefix }}assets/rss.svg" alt="RSS" class="social-icon" width="1em"></a>
-  {% if has_podcast %}
-  <a href="{{ assets_prefix }}podcast.xml" target="_blank"><img src="{{ assets_prefix }}assets/podcast.svg" alt="Podcast" class="social-icon" width="1em"></a>
-  {% endif %}
-  {% if planet.twitterUsername.count > 0 %}
-  <a href="https://twitter.com/{{ planet.twitterUsername|escapejs }}" target="_blank"><img src="{{ assets_prefix }}assets/twitter.svg" alt="twitter.com/{{ planet.twitterUsername|escapejs }}" class="social-icon" width="1em"></a>
-  {% endif %}
-  {% if planet.githubUsername.count > 0 %}
-  <a href="https://github.com/{{ planet.githubUsername|escapejs }}" target="_blank"><img src="{{ assets_prefix }}assets/github.svg" alt="github.com/{{ planet.githubUsername|escapejs }}" class="social-icon" width="1em"></a>
-  {% endif %}
-  {% if planet.telegramUsername.count > 0 %}
-  <a href="https://t.me/{{ planet.telegramUsername|escapejs }}" target="_blank"><img src="{{ assets_prefix }}assets/telegram.svg" alt="t.me/{{ planet.telegramUsername|escapejs }}" class="social-icon" width="1em"></a>
-  {% endif %}
-</div></div>
 <div 
-  class="echo-home__post-list">
-  {% for article in articles %}
-  <div 
-    class="echo-home__post-item">
-    {% if article.heroImage != nil %}
-    <!--<div class="item-hero-image"><a href="{{ article.id }}/"><img src="{{ article.id }}/{{ article.heroImage }}"></a></div>-->
-    {% endif %}
-    <h3 
-      class="echo-home__post-item-title">
-      <a 
-        href=".{{ article.link }}"
-        title="{{ article.title|escape }}">
-        {{ article.title | escape }}
-      </a>
-    </h3>
-  
+  class="echo-home__header"
+  data-title="{{ page_title | escape }}">
+  <div
+    class="echo-container echo-home__header-wrapper">
     <div 
-      class="echo-home__post-item-meta">
+      class="echo-home__site-info">
+      <h1
+        class="echo-home__site-title">
+        {{ page_title | escape }}
+      </h1>
+      
       <div 
-        class="echo-home__post-item-date">
-        {{ article.created | ymd }}
+        class="echo-home__site-about">
+        We buidl.
       </div>
       
-      {% if article.hasVideo %}
-      <img 
-        src="{{ assets_prefix }}assets/video.svg" 
-        class="echo-home__post-item-icon" 
-        alt="Has Video">
+      
+      {% if page_description_html.count > 0 %}
+      <div 
+        class="echo-home__site-about">
+        {{ page_description_html }}
+      </div>
+      {% endif %}
+    </div>
+    
+    <div
+      class="echo-home__social-list">
+      <a 
+        class="echo-home__social-item"
+        href="{{ assets_prefix }}rss.xml" 
+        target="_blank"
+        title="RSS">
+        <div
+          class="echo-home__social-item-box">
+          <img 
+            src="{{ assets_prefix }}assets/icons/rss.svg" 
+            alt="RSS" 
+            class="echo-home__social-item-icon">
+        </div>
+      </a>
+      
+      {% if has_podcast %}
+      <a 
+        class="echo-home__social-item"
+        href="{{ assets_prefix }}podcast.xml" 
+        target="_blank"
+        title="Podcast">
+        <div
+          class="echo-home__social-item-box">
+          <img 
+            src="{{ assets_prefix }}assets/icons/podcast.svg" 
+            alt="Podcast" 
+            class="echo-home__social-item-icon">
+        </div>
+      </a>
       {% endif %}
       
-      {% if article.hasAudio %}
-      <img 
-        src="{{ assets_prefix }}assets/microphone.svg" 
-        width="1em" 
-        class="echo-home__post-item-icon"
-        alt="Has Audio">
+      {% if planet.twitterUsername.count > 0 %}
+      <a 
+        class="echo-home__social-item"
+        href="https://twitter.com/{{ planet.twitterUsername|escapejs }}" 
+        target="_blank"
+        title="Twitter">
+        <div
+          class="echo-home__social-item-box">
+          <img 
+            src="{{ assets_prefix }}assets/icons/twitter.svg" 
+            alt="twitter.com/{{ planet.twitterUsername|escapejs }}" 
+            class="echo-home__social-item-icon">
+        </div>
+      </a>
+      {% endif %}
+      
+      {% if planet.githubUsername.count > 0 %}
+      <a 
+        class="echo-home__social-item"
+        href="https://github.com/{{ planet.githubUsername|escapejs }}" 
+        target="_blank"
+        title="Github">
+        <div
+          class="echo-home__social-item-box">
+          <img 
+            src="{{ assets_prefix }}assets/icons/github.svg" 
+            alt="github.com/{{ planet.githubUsername|escapejs }}" 
+            class="echo-home__social-item-icon">
+        </div>
+      </a>
+      {% endif %}
+      
+      {% if planet.telegramUsername.count > 0 %}
+      <a 
+        class="echo-home__social-item"
+        href="https://t.me/{{ planet.telegramUsername|escapejs }}" 
+        target="_blank"
+        title="Telegram">
+        <div
+          class="echo-home__social-item-box">
+          <img 
+            src="{{ assets_prefix }}assets/icons/telegram.svg" 
+            alt="t.me/{{ planet.telegramUsername|escapejs }}" 
+            class="echo-home__social-item-icon">
+        </div>
+      </a>
       {% endif %}
     </div>
   </div>
-  {% endfor %}
+</div>
+
+<div
+  class="echo-home__content echo-container">
+  <!-- <nav
+    class="echo-home__nav">
+    <a 
+      class="echo-home__nav-item active"
+      href="./" 
+      title="Home">
+      Home
+    </a> -->
+    
+    <!-- TODO: Implement Article.kind and Archive
+      <a href="./" class="nav-item">About</a>
+      <a href="./" class="nav-item">Archive</a>
+      <a href="./" class="nav-item">Contact</a>
+    -->
+  <!-- </nav>  -->
+
+  <div 
+    class="echo-home__post-list">
+    {% for article in articles %}
+    <a 
+      class="echo-home__post-item"
+      href=".{{ article.link }}"
+      title="{{ article.title | escape }}">
+      {% if article.heroImage != nil %}
+      <!--<div class="item-hero-image"><a href="{{ article.id }}/"><img src="{{ article.id }}/{{ article.heroImage }}"></a></div>-->
+      {% endif %}
+      <h3 
+        class="echo-home__post-item-title">
+        {{ article.title | escape }}
+      </h3>
+    
+      <div
+        class="echo-home__post-item-meta">
+        <div 
+          class="echo-home__post-item-date">
+          {{ article.created | ymd }}
+        </div>
+        
+        {% if article.hasVideo %}
+        <svg 
+        class="echo-home__post-item-icon"
+          xmlns="http://www.w3.org/2000/svg" 
+          viewBox="0 0 24 24" 
+          width="24" 
+          height="24">
+          <path fill="none" d="M0 0h24v24H0z"/>
+          <path d="M12 3a3 3 0 0 0-3 3v4a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zm0-2a5 5 0 0 1 5 5v4a5 5 0 0 1-10 0V6a5 5 0 0 1 5-5zM3.055 11H5.07a7.002 7.002 0 0 0 13.858 0h2.016A9.004 9.004 0 0 1 13 18.945V23h-2v-4.055A9.004 9.004 0 0 1 3.055 11z"/>
+        </svg>
+        {% endif %}
+        
+        {% if article.hasAudio %}
+        <svg 
+          class="echo-home__post-item-icon"
+          xmlns="http://www.w3.org/2000/svg" 
+          viewBox="0 0 24 24" 
+          width="24" 
+          height="24">
+          <path fill="none" d="M0 0h24v24H0z"/>
+          <path d="M17 9.2l5.213-3.65a.5.5 0 0 1 .787.41v12.08a.5.5 0 0 1-.787.41L17 14.8V19a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v4.2zm0 3.159l4 2.8V8.84l-4 2.8v.718zM3 6v12h12V6H3zm2 2h2v2H5V8z"/>
+        </svg>
+        {% endif %}
+      </div>
+    </a>
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}
