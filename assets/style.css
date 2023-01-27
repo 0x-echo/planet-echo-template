@@ -115,10 +115,6 @@ a:hover {
   background: var(--echo-bg-color);
 }
 
-.echo-home__header::after {
-  content: attr(data-title);
-}
-
 .echo-home__header-wrapper {
   display: flex;
   flex-direction: column;
