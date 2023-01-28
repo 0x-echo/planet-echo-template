@@ -21,11 +21,11 @@
 <!-- End Open Graph Tags -->
 {% endblock %}
 {% block main %}
-<div 
-  class="echo-home__header"
-  data-title="{{ page_title | escape }}">
-  <div
-    class="echo-container echo-home__header-wrapper">
+<div
+  class="echo-home">
+  <div 
+    class="echo-home__header"
+    data-title="{{ page_title | escape }}">
     <div 
       class="echo-home__site-info">
       <h1
@@ -56,10 +56,15 @@
         title="RSS">
         <div
           class="echo-home__social-item-box">
-          <img 
-            src="{{ assets_prefix }}assets/icons/rss.svg" 
-            alt="RSS" 
-            class="echo-home__social-item-icon">
+          <svg 
+            class="echo-home__social-item-icon"
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 24 24" 
+            width="24" 
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z"/>
+            <path d="M3 3c9.941 0 18 8.059 18 18h-3c0-8.284-6.716-15-15-15V3zm0 7c6.075 0 11 4.925 11 11h-3a8 8 0 0 0-8-8v-3zm0 7a4 4 0 0 1 4 4H3v-4z"/>
+          </svg>
         </div>
       </a>
       
@@ -71,10 +76,15 @@
         title="Podcast">
         <div
           class="echo-home__social-item-box">
-          <img 
-            src="{{ assets_prefix }}assets/icons/podcast.svg" 
-            alt="Podcast" 
-            class="echo-home__social-item-icon">
+          <svg 
+            class="echo-home__social-item-icon"
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 24 24" 
+            width="24" 
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z"/>
+            <path d="M4.929 2.929l1.414 1.414A7.975 7.975 0 0 0 4 10c0 2.21.895 4.21 2.343 5.657L4.93 17.07A9.969 9.969 0 0 1 2 10a9.969 9.969 0 0 1 2.929-7.071zm14.142 0A9.969 9.969 0 0 1 22 10a9.969 9.969 0 0 1-2.929 7.071l-1.414-1.414A7.975 7.975 0 0 0 20 10c0-2.21-.895-4.21-2.343-5.657L19.07 2.93zM7.757 5.757l1.415 1.415A3.987 3.987 0 0 0 8 10c0 1.105.448 2.105 1.172 2.828l-1.415 1.415A5.981 5.981 0 0 1 6 10c0-1.657.672-3.157 1.757-4.243zm8.486 0A5.981 5.981 0 0 1 18 10a5.981 5.981 0 0 1-1.757 4.243l-1.415-1.415A3.987 3.987 0 0 0 16 10a3.987 3.987 0 0 0-1.172-2.828l1.415-1.415zM12 12a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 2c.58 0 1.077.413 1.184.983L14.5 22h-5l1.316-7.017c.107-.57.604-.983 1.184-.983z"/>
+          </svg>
         </div>
       </a>
       {% endif %}
@@ -87,10 +97,15 @@
         title="Twitter">
         <div
           class="echo-home__social-item-box">
-          <img 
-            src="{{ assets_prefix }}assets/icons/twitter.svg" 
-            alt="twitter.com/{{ planet.twitterUsername|escapejs }}" 
-            class="echo-home__social-item-icon">
+          <svg 
+            class="echo-home__social-item-icon"
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 24 24" 
+            width="24" 
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z"/>
+            <path d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z"/>
+          </svg>
         </div>
       </a>
       {% endif %}
@@ -103,10 +118,15 @@
         title="Github">
         <div
           class="echo-home__social-item-box">
-          <img 
-            src="{{ assets_prefix }}assets/icons/github.svg" 
-            alt="github.com/{{ planet.githubUsername|escapejs }}" 
-            class="echo-home__social-item-icon">
+          <svg 
+            class="echo-home__social-item-icon"
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 24 24" 
+            width="24" 
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z"/>
+            <path d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z"/>
+          </svg>
         </div>
       </a>
       {% endif %}
@@ -119,83 +139,87 @@
         title="Telegram">
         <div
           class="echo-home__social-item-box">
-          <img 
-            src="{{ assets_prefix }}assets/icons/telegram.svg" 
-            alt="t.me/{{ planet.telegramUsername|escapejs }}" 
-            class="echo-home__social-item-icon">
+          <svg 
+            class="echo-home__social-item-icon"
+            width="24px" 
+            height="24px" 
+            viewBox="0 0 24 24" 
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="m20.665 3.717-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15 4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z"/>
+          </svg>
         </div>
       </a>
       {% endif %}
     </div>
   </div>
-</div>
 
-<div
-  class="echo-home__content echo-container">
-  <!-- <nav
-    class="echo-home__nav">
-    <a 
-      class="echo-home__nav-item active"
-      href="./" 
-      title="Home">
-      Home
-    </a> -->
-    
-    <!-- TODO: Implement Article.kind and Archive
-      <a href="./" class="nav-item">About</a>
-      <a href="./" class="nav-item">Archive</a>
-      <a href="./" class="nav-item">Contact</a>
-    -->
-  <!-- </nav>  -->
+  <div
+    class="echo-home__content">
+    <!-- <nav
+      class="echo-home__nav">
+      <a 
+        class="echo-home__nav-item active"
+        href="./" 
+        title="Home">
+        Home
+      </a> -->
+      
+      <!-- TODO: Implement Article.kind and Archive
+        <a href="./" class="nav-item">About</a>
+        <a href="./" class="nav-item">Archive</a>
+        <a href="./" class="nav-item">Contact</a>
+      -->
+    <!-- </nav>  -->
 
-  <div 
-    class="echo-home__post-list">
-    {% for article in articles %}
-    <a 
-      class="echo-home__post-item"
-      href=".{{ article.link }}"
-      title="{{ article.title | escape }}">
-      {% if article.heroImage != nil %}
-      <!--<div class="item-hero-image"><a href="{{ article.id }}/"><img src="{{ article.id }}/{{ article.heroImage }}"></a></div>-->
-      {% endif %}
-      <h3 
-        class="echo-home__post-item-title">
-        {{ article.title | escape }}
-      </h3>
-    
-      <div
-        class="echo-home__post-item-meta">
-        <div 
-          class="echo-home__post-item-date">
-          {{ article.created | ymd }}
+    <div 
+      class="echo-home__post-list">
+      {% for article in articles %}
+      <a 
+        class="echo-home__post-item"
+        href=".{{ article.link }}"
+        title="{{ article.title | escape }}">
+        {% if article.heroImage != nil %}
+        <!--<div class="item-hero-image"><a href="{{ article.id }}/"><img src="{{ article.id }}/{{ article.heroImage }}"></a></div>-->
+        {% endif %}
+        <h3 
+          class="echo-home__post-item-title">
+          {{ article.title | escape }}
+        </h3>
+      
+        <div
+          class="echo-home__post-item-meta">
+          <div 
+            class="echo-home__post-item-date">
+            {{ article.created | ymd }}
+          </div>
+          
+          {% if article.hasVideo %}
+          <svg 
+            class="echo-home__post-item-icon"
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 24 24" 
+            width="24" 
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z"/>
+            <path d="M17 9.2l5.213-3.65a.5.5 0 0 1 .787.41v12.08a.5.5 0 0 1-.787.41L17 14.8V19a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v4.2zm0 3.159l4 2.8V8.84l-4 2.8v.718zM3 6v12h12V6H3zm2 2h2v2H5V8z"/>
+          </svg>
+          {% endif %}
+          
+          {% if article.hasAudio %}
+          <svg 
+            class="echo-home__post-item-icon"
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 24 24" 
+            width="24" 
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z"/>
+            <path d="M12 3a3 3 0 0 0-3 3v4a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zm0-2a5 5 0 0 1 5 5v4a5 5 0 0 1-10 0V6a5 5 0 0 1 5-5zM3.055 11H5.07a7.002 7.002 0 0 0 13.858 0h2.016A9.004 9.004 0 0 1 13 18.945V23h-2v-4.055A9.004 9.004 0 0 1 3.055 11z"/>
+          </svg>
+          {% endif %}
         </div>
-        
-        {% if article.hasVideo %}
-        <svg 
-        class="echo-home__post-item-icon"
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 24 24" 
-          width="24" 
-          height="24">
-          <path fill="none" d="M0 0h24v24H0z"/>
-          <path d="M12 3a3 3 0 0 0-3 3v4a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zm0-2a5 5 0 0 1 5 5v4a5 5 0 0 1-10 0V6a5 5 0 0 1 5-5zM3.055 11H5.07a7.002 7.002 0 0 0 13.858 0h2.016A9.004 9.004 0 0 1 13 18.945V23h-2v-4.055A9.004 9.004 0 0 1 3.055 11z"/>
-        </svg>
-        {% endif %}
-        
-        {% if article.hasAudio %}
-        <svg 
-          class="echo-home__post-item-icon"
-          xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 24 24" 
-          width="24" 
-          height="24">
-          <path fill="none" d="M0 0h24v24H0z"/>
-          <path d="M17 9.2l5.213-3.65a.5.5 0 0 1 .787.41v12.08a.5.5 0 0 1-.787.41L17 14.8V19a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v4.2zm0 3.159l4 2.8V8.84l-4 2.8v.718zM3 6v12h12V6H3zm2 2h2v2H5V8z"/>
-        </svg>
-        {% endif %}
-      </div>
-    </a>
-    {% endfor %}
+      </a>
+      {% endfor %}
+    </div>
   </div>
 </div>
 {% endblock %}
